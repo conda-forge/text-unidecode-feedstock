@@ -9,16 +9,16 @@ source:
   sha256: bad6603bb14d279193107714b288be206cac565dfa49aa5b105294dd5c4aab93
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  script: {{ PYTHON }} -m pip install .
 
 requirements:
   host:
-    - python
+    - python >=3.4
     - pip
   run:
-    - python
+    - python >=3.4
 
 test:
   imports:
@@ -26,7 +26,7 @@ test:
 
 about:
   home: https://github.com/kmike/text-unidecode/
-  license: Artistic
+  license: Artistic-1.0-Perl
   license_family: OTHER
   license_file: LICENSE
   summary: "The most basic Text::Unidecode port"
